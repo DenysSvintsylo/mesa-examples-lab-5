@@ -29,8 +29,8 @@ _COLORS = [
 ]
 
 
-grid_rows = 50
-grid_cols = 25
+grid_rows = 100
+grid_cols = 100
 cell_size = 10
 canvas_width = grid_rows * cell_size
 canvas_height = grid_cols * cell_size
@@ -50,7 +50,9 @@ def color_patch_draw(cell):
     portrayal = {"Shape": "rect", "w": 1, "h": 1, "Filled": "true", "Layer": 0}
     # Use cell.pos to get the (x, y) coordinates
     portrayal["x"], portrayal["y"] = cell.pos
-    portrayal["Color"] = _COLORS[cell.state]  # Make sure to use cell.state for the color
+    portrayal["Color"] = _COLORS[
+        cell.state
+    ]  # Make sure to use cell.state for the color
     return portrayal
 
 
